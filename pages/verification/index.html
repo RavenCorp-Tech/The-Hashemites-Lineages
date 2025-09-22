@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification System | نظام التحقق</title>
+    <meta name="description" content="Verify the authenticity of Hashemite lineage records - official verification system">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="rtl">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../../index.html" class="logo">
+                <img src="../../images/logo.png" alt="Hashemites Lineages Logo" id="logo-img">
+                <div class="logo-text">
+                    <h1 class="content-ar">نسب الهاشميين</h1>
+                    <h1 class="content-en">The Hashemites Lineages</h1>
+                    <p class="content-ar">الموقع الرسمي للهاشميين في السودان</p>
+                    <p class="content-en">Official Website of Hashemites in Sudan</p>
+                </div>
+            </a>
+            
+            <button class="mobile-nav-toggle">&#9776;</button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../../index.html" class="nav-link">
+                            <span class="content-ar">الصفحة الرئيسية</span>
+                            <span class="content-en">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../union/index.html" class="nav-link">
+                            <span class="content-ar">النقابة</span>
+                            <span class="content-en">Union</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../verification/index.html" class="nav-link">
+                            <span class="content-ar">التحقق</span>
+                            <span class="content-en">Verification</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../history/index.html" class="nav-link">
+                            <span class="content-ar">التاريخ والأنساب</span>
+                            <span class="content-en">History & Genealogy</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="ar">العربية</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="content-ar">نظام التحقق</h1>
+            <h1 class="content-en">Verification System</h1>
+            
+            <p class="content-ar">تحقق من صحة شهادة النسب وسجلات الأنساب</p>
+            <p class="content-en">Verify the authenticity of lineage certificates and genealogical records</p>
+        </div>
+    </section>
+    
+    <!-- Verification Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="content-ar rtl">
+                <h2 class="section-title">التحقق من صحة الوثائق</h2>
+                <p class="text-center mb-3">
+                    يتيح نظام التحقق التأكد من صحة شهادات النسب الصادرة عن نقابة الأشراف الطالبين في السودان.
+                    أدخل الرقم التسلسلي والاسم للتحقق من صحة الوثيقة.
+                </p>
+            </div>
+            
+            <div class="content-en ltr">
+                <h2 class="section-title">Document Verification</h2>
+                <p class="text-center mb-3">
+                    The verification system allows checking the authenticity of lineage certificates issued by the Hashemite Ṭālibī Union in Sudan.
+                    Enter the serial number and name to verify the document.
+                </p>
+            </div>
+            
+            <form class="verification-form">
+                <div class="form-group">
+                    <label for="serial-number" class="form-label content-ar">الرقم التسلسلي</label>
+                    <label for="serial-number" class="form-label content-en">Serial Number</label>
+                    <input type="text" id="serial-number" name="serial-number" class="form-input" placeholder="e.g., NSC-2025-001" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="form-label content-ar">الاسم</label>
+                    <label for="name" class="form-label content-en">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn">
+                        <span class="content-ar">تحقق</span>
+                        <span class="content-en">Verify</span>
+                    </button>
+                </div>
+                
+                <div class="verification-result" style="display: none;">
+                    <!-- Results will be shown here via JavaScript -->
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- How Verification Works -->
+    <section class="section">
+        <div class="container">
+            <div class="content-ar rtl">
+                <h2 class="section-title">كيف يعمل نظام التحقق؟</h2>
+                
+                <div class="row">
+                    <div class="col">
+                        <h3><i class="fas fa-certificate"></i> الشهادات المعتمدة</h3>
+                        <p>
+                            تصدر نقابة الأشراف الطالبين في السودان شهادات النسب الرسمية بعد التحقق والتدقيق في المشجرات والسلاسل النسبية.
+                            يتم منح كل شهادة رقماً تسلسلياً فريداً يمكن التحقق منه عبر هذا النظام.
+                        </p>
+                    </div>
+                    
+                    <div class="col">
+                        <h3><i class="fas fa-shield-alt"></i> الأمان والموثوقية</h3>
+                        <p>
+                            تتميز شهادات النسب برموز QR وأرقام تسلسلية مشفرة تضمن أصالة الوثيقة وحمايتها من التزوير.
+                            يمكن لأي شخص التحقق من صحة الشهادة عبر هذا النظام الإلكتروني المؤمن.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p><strong>ملاحظة هامة:</strong> للحصول على شهادة نسب، يرجى التواصل مع مقر النقابة.</p>
+                </div>
+            </div>
+            
+            <div class="content-en ltr">
+                <h2 class="section-title">How Does the Verification System Work?</h2>
+                
+                <div class="row">
+                    <div class="col">
+                        <h3><i class="fas fa-certificate"></i> Certified Documents</h3>
+                        <p>
+                            The Hashemite Ṭālibī Union in Sudan issues official lineage certificates after thorough verification and scrutiny of family trees and genealogical chains.
+                            Each certificate is assigned a unique serial number that can be verified through this system.
+                        </p>
+                    </div>
+                    
+                    <div class="col">
+                        <h3><i class="fas fa-shield-alt"></i> Security and Reliability</h3>
+                        <p>
+                            Lineage certificates feature QR codes and encrypted serial numbers that ensure the document's authenticity and protection against forgery.
+                            Anyone can verify the certificate's validity through this secure electronic system.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p><strong>Important note:</strong> To obtain a lineage certificate, please contact the Union headquarters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sample QR Code Section (for demo) -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="content-ar">نموذج رمز QR للتحقق</h3>
+                <h3 class="content-en">Sample QR Verification Code</h3>
+                
+                <div class="mt-3">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NSC-2025-001" alt="Sample QR Code" style="max-width: 200px;">
+                </div>
+                
+                <p class="mt-2 content-ar">امسح رمز QR للتحقق من صحة الشهادة</p>
+                <p class="mt-2 content-en">Scan the QR code to verify certificate authenticity</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title content-ar">نسب الهاشميين</h3>
+                <h3 class="footer-title content-en">The Hashemites Lineages</h3>
+                <p class="content-ar">الموقع الرسمي للهاشميين في السودان، مخصص للتعارف، والتوثيق، وصلة الأرحام.</p>
+                <p class="content-en">The official website of the Hashemites in Sudan, dedicated to acquaintance, documentation, and kinship.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title content-ar">روابط مهمة</h3>
+                <h3 class="footer-title content-en">Important Links</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="../../index.html" class="footer-link">
+                            <span class="content-ar">الصفحة الرئيسية</span>
+                            <span class="content-en">Home</span>
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="../union/index.html" class="footer-link">
+                            <span class="content-ar">النقابة</span>
+                            <span class="content-en">Union</span>
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="../verification/index.html" class="footer-link">
+                            <span class="content-ar">التحقق</span>
+                            <span class="content-en">Verification</span>
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="../history/index.html" class="footer-link">
+                            <span class="content-ar">التاريخ والأنساب</span>
+                            <span class="content-en">History & Genealogy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title content-ar">معلومات الاتصال</h3>
+                <h3 class="footer-title content-en">Contact Information</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> <span class="content-ar">الخرطوم، السودان</span><span class="content-en">Khartoum, Sudan</span></p>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Banuhashim.sd@gmail.com</p>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +249903440956</p>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fab fa-whatsapp"></i> +249118790042</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="content-ar">جميع الحقوق محفوظة &copy; <span id="year">2025</span> - نقابة الأشراف الطالبين في السودان</p>
+            <p class="content-en">All rights reserved &copy; <span id="year">2025</span> - Hashemite Ṭālibī Union in Sudan</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script>
+        // Set copyright year
+        document.querySelectorAll('#year').forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+        
+        // Placeholder for logo (until an actual logo is created)
+        if (!document.getElementById('logo-img').src.includes('logo.png')) {
+            document.getElementById('logo-img').src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230a5e2a'/%3E%3Cpath d='M30,35 L70,35 L50,70 Z' fill='%238c6e3c'/%3E%3C/svg%3E";
+        }
+    </script>
+</body>
+</html>
