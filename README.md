@@ -41,7 +41,7 @@ The website consists of the following main sections:
 ## Contact Information
 
 - **Email**: Banuhashim.sd@gmail.com
-- **Phone/WhatsApp**:
+- **Phone**:
   - +249903440956
   - +249118790042
 

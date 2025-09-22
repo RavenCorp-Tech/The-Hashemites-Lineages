@@ -60,9 +60,16 @@
                     </li>
                 </ul>
                 
-                <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="ar">العربية</button>
-                    <button class="lang-btn" data-lang="en">English</button>
+                <div class="toggles-container">
+                    <div class="theme-toggle">
+                        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="ar">العربية</button>
+                        <button class="lang-btn" data-lang="en">English</button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -71,11 +78,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1 class="content-ar">نظام التحقق</h1>
-            <h1 class="content-en">Verification System</h1>
+            <h1 class="content-ar reveal-left">نظام التحقق</h1>
+            <h1 class="content-en reveal-left">Verification System</h1>
             
-            <p class="content-ar">تحقق من صحة شهادة النسب وسجلات الأنساب</p>
-            <p class="content-en">Verify the authenticity of lineage certificates and genealogical records</p>
+            <p class="content-ar reveal-right">تحقق من صحة شهادة النسب وسجلات الأنساب</p>
+            <p class="content-en reveal-right">Verify the authenticity of lineage certificates and genealogical records</p>
         </div>
     </section>
     
@@ -83,32 +90,26 @@
     <section class="section">
         <div class="container">
             <div class="content-ar rtl">
-                <h2 class="section-title">التحقق من صحة الوثائق</h2>
-                <p class="text-center mb-3">
+                <h2 class="section-title reveal-top">التحقق من صحة الوثائق</h2>
+                <p class="text-center mb-3 reveal-fade">
                     يتيح نظام التحقق التأكد من صحة شهادات النسب الصادرة عن نقابة الأشراف الطالبين في السودان.
-                    أدخل الرقم التسلسلي والاسم للتحقق من صحة الوثيقة.
+                    أدخل الرقم التسلسلي للتحقق من صحة الوثيقة.
                 </p>
             </div>
             
             <div class="content-en ltr">
-                <h2 class="section-title">Document Verification</h2>
-                <p class="text-center mb-3">
+                <h2 class="section-title reveal-top">Document Verification</h2>
+                <p class="text-center mb-3 reveal-fade">
                     The verification system allows checking the authenticity of lineage certificates issued by the Hashemite Ṭālibī Union in Sudan.
-                    Enter the serial number and name to verify the document.
+                    Enter the serial number to verify the document.
                 </p>
             </div>
             
-            <form class="verification-form">
+            <form class="verification-form reveal-bottom">
                 <div class="form-group">
                     <label for="serial-number" class="form-label content-ar">الرقم التسلسلي</label>
                     <label for="serial-number" class="form-label content-en">Serial Number</label>
                     <input type="text" id="serial-number" name="serial-number" class="form-input" placeholder="e.g., NSC-2025-001" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="name" class="form-label content-ar">الاسم</label>
-                    <label for="name" class="form-label content-en">Name</label>
-                    <input type="text" id="name" name="name" class="form-input" required>
                 </div>
                 
                 <div class="text-center">
@@ -129,10 +130,10 @@
     <section class="section">
         <div class="container">
             <div class="content-ar rtl">
-                <h2 class="section-title">كيف يعمل نظام التحقق؟</h2>
+                <h2 class="section-title reveal-top">كيف يعمل نظام التحقق؟</h2>
                 
                 <div class="row">
-                    <div class="col">
+                    <div class="col reveal-left">
                         <h3><i class="fas fa-certificate"></i> الشهادات المعتمدة</h3>
                         <p>
                             تصدر نقابة الأشراف الطالبين في السودان شهادات النسب الرسمية بعد التحقق والتدقيق في المشجرات والسلاسل النسبية.
@@ -140,7 +141,7 @@
                         </p>
                     </div>
                     
-                    <div class="col">
+                    <div class="col reveal-right">
                         <h3><i class="fas fa-shield-alt"></i> الأمان والموثوقية</h3>
                         <p>
                             تتميز شهادات النسب برموز QR وأرقام تسلسلية مشفرة تضمن أصالة الوثيقة وحمايتها من التزوير.
@@ -149,16 +150,16 @@
                     </div>
                 </div>
                 
-                <div class="text-center mt-4">
+                <div class="text-center mt-4 reveal-bottom">
                     <p><strong>ملاحظة هامة:</strong> للحصول على شهادة نسب، يرجى التواصل مع مقر النقابة.</p>
                 </div>
             </div>
             
             <div class="content-en ltr">
-                <h2 class="section-title">How Does the Verification System Work?</h2>
+                <h2 class="section-title reveal-top">How Does the Verification System Work?</h2>
                 
                 <div class="row">
-                    <div class="col">
+                    <div class="col reveal-left">
                         <h3><i class="fas fa-certificate"></i> Certified Documents</h3>
                         <p>
                             The Hashemite Ṭālibī Union in Sudan issues official lineage certificates after thorough verification and scrutiny of family trees and genealogical chains.
@@ -166,7 +167,7 @@
                         </p>
                     </div>
                     
-                    <div class="col">
+                    <div class="col reveal-right">
                         <h3><i class="fas fa-shield-alt"></i> Security and Reliability</h3>
                         <p>
                             Lineage certificates feature QR codes and encrypted serial numbers that ensure the document's authenticity and protection against forgery.
@@ -175,7 +176,7 @@
                     </div>
                 </div>
                 
-                <div class="text-center mt-4">
+                <div class="text-center mt-4 reveal-bottom">
                     <p><strong>Important note:</strong> To obtain a lineage certificate, please contact the Union headquarters.</p>
                 </div>
             </div>
@@ -185,12 +186,12 @@
     <!-- Sample QR Code Section (for demo) -->
     <section class="section">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center reveal-fade">
                 <h3 class="content-ar">نموذج رمز QR للتحقق</h3>
                 <h3 class="content-en">Sample QR Verification Code</h3>
                 
                 <div class="mt-3">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NSC-2025-001" alt="Sample QR Code" style="max-width: 200px;">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NSC-2025-001" alt="Sample QR Code" style="max-width: 200px;" class="reveal-pulse">
                 </div>
                 
                 <p class="mt-2 content-ar">امسح رمز QR للتحقق من صحة الشهادة</p>
@@ -250,10 +251,10 @@
                     <p><i class="fas fa-envelope"></i> Banuhashim.sd@gmail.com</p>
                 </div>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> +249903440956</p>
+                    <p><i class="fas fa-phone"></i> <span class="content-ar">‎+249903440956</span><span class="content-en">+249903440956</span></p>
                 </div>
                 <div class="contact-info">
-                    <p><i class="fab fa-whatsapp"></i> +249118790042</p>
+                    <p><i class="fas fa-phone"></i> <span class="content-ar">‎+249118790042</span><span class="content-en">+249118790042</span></p>
                 </div>
             </div>
         </div>
@@ -276,6 +277,47 @@
         if (!document.getElementById('logo-img').src.includes('logo.png')) {
             document.getElementById('logo-img').src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230a5e2a'/%3E%3Cpath d='M30,35 L70,35 L50,70 Z' fill='%238c6e3c'/%3E%3C/svg%3E";
         }
+        
+        // Demo verification functionality
+        const form = document.querySelector('.verification-form');
+        const resultDiv = document.querySelector('.verification-result');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const serialNumber = document.getElementById('serial-number').value;
+            const name = document.getElementById('name').value;
+            
+            resultDiv.style.display = 'block';
+            
+            // For demo purposes, we'll just check if the serial number is our sample
+            if (serialNumber === 'NSC-2025-001') {
+                resultDiv.innerHTML = `
+                    <div class="verification-success">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="content-ar">تم التحقق بنجاح. الوثيقة أصلية.</div>
+                        <div class="content-en">Verification successful. The document is authentic.</div>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="verification-failure">
+                        <i class="fas fa-times-circle"></i>
+                        <div class="content-ar">فشل التحقق. لم يتم العثور على الوثيقة.</div>
+                        <div class="content-en">Verification failed. Document not found.</div>
+                    </div>
+                `;
+            }
+        });
+        
+        // Initialize theme and scroll reveal on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize theme
+            initThemePreference();
+            
+            // Setup scroll reveal
+            setupScrollReveal();
+        });
     </script>
 </body>
 </html>

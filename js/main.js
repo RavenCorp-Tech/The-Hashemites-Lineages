@@ -1,18 +1,25 @@
 /**
  * The Hashemites Lineages - Main JavaScript File
- * Handles language toggling, navigation, and interactive elements
+ * Handles language toggling, navigation, theme switching, and interactive elements
  * Created: September 22, 2025
+ * Updated: September 22, 2025 - Added theme toggle and scroll reveal
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize language preference
     initLanguagePreference();
     
+    // Initialize theme preference
+    initThemePreference();
+    
     // Setup mobile navigation
     setupMobileNav();
     
     // Setup tabs functionality
     setupTabs();
+    
+    // Setup scroll reveal animations
+    setupScrollReveal();
     
     // Setup verification form if it exists
     if (document.querySelector('.verification-form')) {
@@ -209,6 +216,101 @@ function verifyRecord(serialNumber, name) {
             resolve({ valid });
         }, 1000);
     });
+}
+
+/**
+ * Initialize theme preference based on saved setting or system preference
+ */
+function initThemePreference() {
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set the theme based on saved preference or system preference
+    const themeToSet = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    setTheme(themeToSet);
+    
+    // Add event listener to theme toggle button
+    document.querySelectorAll('.theme-toggle-btn').forEach(button => {
+        button.addEventListener('click', toggleTheme);
+        
+        // Update button icon based on current theme
+        updateThemeButtonIcon(button, themeToSet);
+    });
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) { // Only auto-switch if user hasn't manually set theme
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+/**
+ * Set the theme for the site
+ * @param {string} theme - Theme name ('light' or 'dark')
+ */
+function setTheme(theme) {
+    // Save preference to localStorage
+    localStorage.setItem('theme', theme);
+    
+    // Set data-theme attribute on document
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update theme toggle button icons
+    document.querySelectorAll('.theme-toggle-btn').forEach(button => {
+        updateThemeButtonIcon(button, theme);
+    });
+}
+
+/**
+ * Update theme button icon based on theme
+ * @param {HTMLElement} button - The theme toggle button
+ * @param {string} theme - Current theme
+ */
+function updateThemeButtonIcon(button, theme) {
+    if (theme === 'dark') {
+        button.innerHTML = '<i class="fas fa-sun"></i>'; // Show sun icon in dark mode
+    } else {
+        button.innerHTML = '<i class="fas fa-moon"></i>'; // Show moon icon in light mode
+    }
+}
+
+/**
+ * Toggle between light and dark themes
+ */
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+}
+
+/**
+ * Setup scroll reveal animations
+ */
+function setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    
+    // Initial check for elements in view
+    checkReveal();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', checkReveal);
+    
+    function checkReveal() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150; // How far from the bottom of the viewport to trigger the reveal
+        
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            
+            if (elementTop < windowHeight - revealPoint) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
 }
 
 /**

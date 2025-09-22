@@ -60,9 +60,16 @@
                     </li>
                 </ul>
                 
-                <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="ar">العربية</button>
-                    <button class="lang-btn" data-lang="en">English</button>
+                <div class="toggles-container">
+                    <div class="theme-toggle">
+                        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="ar">العربية</button>
+                        <button class="lang-btn" data-lang="en">English</button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -82,14 +89,14 @@
     <!-- Introduction Section -->
     <section class="section">
         <div class="container">
-            <div class="bilingual-container">
+            <div class="bilingual-container reveal">
                 <div class="lang-ar rtl">
-                    <h2>تعريف وترحيب</h2>
+                    <h2>مقدمة</h2>
                     <p>الحمد لله الذي أكرم السودان بذرية طاهرة ممتدة من آل بيت النبي ﷺ، أولئك الذين حملوا مشاعل الهداية، وورثوا المجد جيلاً بعد جيل.</p>
                     <p>هذا الفضاء المبارك خُصِّص للتعارف، والتوثيق، وصلة الأرحام بين الهاشميين في السودان، وليكون نافذةً للتاريخ والمجد والهوية.</p>
                 </div>
                 <div class="lang-en ltr">
-                    <h2>Introduction & Welcome</h2>
+                    <h2>Introduction</h2>
                     <p>All praise is due to Allāh, who has honored Sudan with a pure lineage extending from the family of the Prophet ﷺ—those who carried the torches of guidance and inherited glory generation after generation.</p>
                     <p>This blessed space is dedicated to acquaintance, documentation, and kinship between the Hashemites in Sudan, and to serve as a window into history, glory, and identity.</p>
                 </div>
@@ -100,29 +107,33 @@
     <!-- Poetry Section -->
     <section class="poetry">
         <div class="container">
-            <div class="poetry-container">
+            <div class="poetry-container reveal-fade">
+                <div class="poetry-decoration"></div>
                 <div class="content-ar rtl">
-                    <h2>أبيات شعر</h2>
-                    <p class="poetry-verse">
-                        إذا افتخرتَ على البريّة فانظروا ✦✦✦ أصلَ الهُدى من طيبِ جدٍّ طاهرِ<br>
-                        نحنُ الهاشميون الكرامُ إذا انتَسَبْ ✦✦✦ نسبٌ عريقٌ في المعالي فاخرِ
-                    </p>
-                    <p class="poetry-verse">
-                        من دوحةٍ أصلُ الرسالةِ غرسُها ✦✦✦ والمجدُ فينا ما أقامَ الدائرِ<br>
-                        فالعزُّ فينا من قديمٍ راسخٌ ✦✦✦ والفضلُ بينَ العالمينَ شَاهِرِ
-                    </p>
+                    <div class="poetry-content">
+                        <p class="poetry-verse">
+                            <span class="verse-line">إذا افتخرتَ على البريّة فانظروا ✦✦✦ أصلَ الهُدى من طيبِ جدٍّ طاهرِ</span>
+                            <span class="verse-line">نحنُ الهاشميون الكرامُ إذا انتَسَبْ ✦✦✦ نسبٌ عريقٌ في المعالي فاخرِ</span>
+                        </p>
+                        <p class="poetry-verse">
+                            <span class="verse-line">من دوحةٍ أصلُ الرسالةِ غرسُها ✦✦✦ والمجدُ فينا ما أقامَ الدائرِ</span>
+                            <span class="verse-line">فالعزُّ فينا من قديمٍ راسخٌ ✦✦✦ والفضلُ بينَ العالمينَ شَاهِرِ</span>
+                        </p>
+                    </div>
                 </div>
                 <div class="content-en ltr">
-                    <h2>Poetic Verses</h2>
-                    <p class="poetry-verse">
-                        If you boast before mankind, then look ✦✦✦ To the origin of guidance from a noble ancestor.<br>
-                        We are the noble Hashemites, and when lineage is traced ✦✦✦ It is an ancient, exalted heritage of honor.
-                    </p>
-                    <p class="poetry-verse">
-                        From the tree whose root was the Message itself ✦✦✦ Glory remains with us as long as time endures.<br>
-                        Our honor is firmly rooted since the earliest days ✦✦✦ And our virtue is known among all the worlds.
-                    </p>
+                    <div class="poetry-content">
+                        <p class="poetry-verse">
+                            <span class="verse-line">If you boast before mankind, then look ✦✦✦ To the origin of guidance from a noble ancestor.</span>
+                            <span class="verse-line">We are the noble Hashemites, and when lineage is traced ✦✦✦ It is an ancient, exalted heritage of honor.</span>
+                        </p>
+                        <p class="poetry-verse">
+                            <span class="verse-line">From the tree whose root was the Message itself ✦✦✦ Glory remains with us as long as time endures.</span>
+                            <span class="verse-line">Our honor is firmly rooted since the earliest days ✦✦✦ And our virtue is known among all the worlds.</span>
+                        </p>
+                    </div>
                 </div>
+                <div class="poetry-decoration"></div>
             </div>
         </div>
     </section>
@@ -130,11 +141,11 @@
     <!-- Objectives Section -->
     <section class="objectives">
         <div class="container">
-            <h2 class="section-title content-ar">أهدافنا</h2>
-            <h2 class="section-title content-en">Our Objectives</h2>
+            <h2 class="section-title content-ar reveal">أهدافنا</h2>
+            <h2 class="section-title content-en reveal">Our Objectives</h2>
             
             <div class="objectives-container">
-                <div class="objective-card">
+                <div class="objective-card reveal reveal-delay-100">
                     <div class="objective-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
@@ -144,7 +155,7 @@
                     <p class="content-en">Document and compile the history of Hashemites and their contributions to Sudanese society throughout the ages</p>
                 </div>
                 
-                <div class="objective-card">
+                <div class="objective-card reveal reveal-delay-200">
                     <div class="objective-icon">
                         <i class="fas fa-sitemap"></i>
                     </div>
@@ -154,7 +165,7 @@
                     <p class="content-en">Record, digitize, and preserve Hashemite family genealogies and family trees for future generations</p>
                 </div>
                 
-                <div class="objective-card">
+                <div class="objective-card reveal reveal-delay-300">
                     <div class="objective-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -164,7 +175,7 @@
                     <p class="content-en">Enhance communication and acquaintance among members of Hashemite families across Sudan</p>
                 </div>
                 
-                <div class="objective-card">
+                <div class="objective-card reveal reveal-delay-400">
                     <div class="objective-icon">
                         <i class="fas fa-mosque"></i>
                     </div>
@@ -228,10 +239,10 @@
                     <p><i class="fas fa-envelope"></i> Banuhashim.sd@gmail.com</p>
                 </div>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> +249903440956</p>
+                    <p><i class="fas fa-phone"></i> <span class="content-ar">‎+249903440956</span><span class="content-en">+249903440956</span></p>
                 </div>
                 <div class="contact-info">
-                    <p><i class="fab fa-whatsapp"></i> +249118790042</p>
+                    <p><i class="fas fa-phone"></i> <span class="content-ar">‎+249118790042</span><span class="content-en">+249118790042</span></p>
                 </div>
             </div>
         </div>
