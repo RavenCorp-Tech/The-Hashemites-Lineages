@@ -1,0 +1,25 @@
+/**
+ * Additional button styling
+ */
+.admin-action-buttons {
+    display: flex;
+}
+
+.admin-btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.admin-btn-danger:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .admin-action-buttons {
+        flex-direction: column;
+    }
+    
+    .admin-action-buttons button {
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,33 @@
+/* Updated dashboard styles for the consolidated layout */
+
+/* Add some space between dashboard sections */
+.admin-page-section {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+/* Improve spacing between cards and sections */
+.admin-cards-row {
+    margin-bottom: 0;
+}
+
+/* Style the admin section header for better visual hierarchy */
+.admin-section-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Add some animation to the add certificate button */
+#add-certificate-btn {
+    transition: all 0.3s ease;
+}
+
+#add-certificate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure proper spacing in the data table container */
+.admin-data-table-container {
+    margin-top: 1.5rem;
+}

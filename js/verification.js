@@ -42,11 +42,36 @@ document.addEventListener('DOMContentLoaded', function() {
  * @returns {Object|null} - The certificate object or null if not found
  */
 function findCertificate(serialNumber) {
+    console.log("Searching for certificate with serial number:", serialNumber);
+    
     // Convert to uppercase to make the search case-insensitive
     const searchTerm = serialNumber.toUpperCase();
     
+    // Check if we have certificates in localStorage (for the latest data)
+    const storedCertificates = localStorage.getItem('certificatesData');
+    console.log("Found stored certificates in localStorage:", !!storedCertificates);
+    
+    // Start with the built-in certificates data
+    let certsToSearch = certificatesData || [];
+    console.log("Built-in certificates count:", certsToSearch.length);
+    
+    if (storedCertificates) {
+        try {
+            // Use the latest certificates from localStorage
+            certsToSearch = JSON.parse(storedCertificates);
+            console.log("Using certificates from localStorage. Count:", certsToSearch.length);
+        } catch (error) {
+            console.error("Error parsing certificates from localStorage:", error);
+            // Fall back to the built-in data
+            certsToSearch = certificatesData || [];
+        }
+    }
+    
     // Search for the certificate in our data
-    return certificatesData.find(cert => cert.serialNumber.toUpperCase() === searchTerm) || null;
+    const certificate = certsToSearch.find(cert => cert.serialNumber.toUpperCase() === searchTerm) || null;
+    console.log("Certificate found:", certificate ? "Yes" : "No");
+    
+    return certificate;
 }
 
 /**
@@ -78,6 +103,12 @@ function displaySuccess(certificate, resultDiv) {
                     <p><strong>Certificate Type:</strong> ${certificate.certificateTypeEn}</p>
                     <p><strong>Date:</strong> ${certificate.dateEn}</p>
                     <p><strong>Status:</strong> ${certificate.statusEn}</p>
+                </div>
+                
+                <div class="qr-code-container mt-4">
+                    <div class="content-ar">امسح رمز QR للتحقق من الشهادة</div>
+                    <div class="content-en">Scan the QR code to verify the certificate</div>
+                    <img src="${certificate.qrCode}" alt="QR Code" class="qr-code-img mt-2">
                 </div>
             </div>
         </div>

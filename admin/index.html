@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hashemites Lineages | Admin Portal</title>
+    <meta name="description" content="Admin Portal for The Hashemites Lineages - Certificate Management System">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-fixes.css">
+</head>
+<body class="ltr admin-body">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/Logo.png" alt="Hashemites Lineages Logo" id="logo-img">
+                <div class="logo-text">
+                    <h1 class="content-ar">نسب الهاشميين</h1>
+                    <h1 class="content-en">The Hashemites Lineages</h1>
+                    <p class="content-ar">الموقع الرسمي للهاشميين في السودان</p>
+                    <p class="content-en">Official Website of Hashemites in Sudan</p>
+                </div>
+            </a>
+            
+            <button class="mobile-nav-toggle">&#9776;</button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <span class="content-ar">الصفحة الرئيسية</span>
+                            <span class="content-en">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pages/union/index.html" class="nav-link">
+                            <span class="content-ar">النقابة</span>
+                            <span class="content-en">Union</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pages/verification/index.html" class="nav-link">
+                            <span class="content-ar">التحقق</span>
+                            <span class="content-en">Verification</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pages/history/index.html" class="nav-link">
+                            <span class="content-ar">التاريخ والأنساب</span>
+                            <span class="content-en">History & Genealogy</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <span class="content-ar">بوابة الإدارة</span>
+                            <span class="content-en">Admin</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="toggles-container">
+                    <div class="theme-toggle">
+                        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="lang-toggle">
+                        <button class="lang-btn" data-lang="ar">العربية</button>
+                        <button class="lang-btn active" data-lang="en">English</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="admin-section">
+                <h2 class="page-title">
+                    <span class="content-ar">بوابة الإدارة</span>
+                    <span class="content-en">Admin Portal</span>
+                </h2>
+                
+                <div class="admin-login-container">
+                    <div class="admin-login-card">
+                        <div class="text-center mb-4">
+                            <h3>
+                                <span class="content-ar">تسجيل الدخول</span>
+                                <span class="content-en">Administrator Login</span>
+                            </h3>
+                            <p class="content-en">Enter your credentials to access the certificate management system</p>
+                            <p class="content-ar">أدخل بيانات اعتماد للوصول إلى نظام إدارة الشهادات</p>
+                        </div>
+                        
+                        <div id="login-error" class="alert alert-danger d-none">
+                            <span class="content-ar">اسم المستخدم أو كلمة المرور غير صالحة. حاول مرة اخرى.</span>
+                            <span class="content-en">Invalid username or password. Please try again.</span>
+                        </div>
+                        
+                        <form id="admin-login-form">
+                            <div class="form-group mb-3">
+                                <label for="username">
+                                    <i class="fas fa-user"></i> 
+                                    <span class="content-ar">اسم المستخدم</span>
+                                    <span class="content-en">Username</span>
+                                </label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="password">
+                                    <i class="fas fa-lock"></i> 
+                                    <span class="content-ar">كلمة المرور</span>
+                                    <span class="content-en">Password</span>
+                                </label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" id="toggle-password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block w-100">
+                                <i class="fas fa-sign-in-alt"></i> 
+                                <span class="content-ar">تسجيل الدخول</span>
+                                <span class="content-en">Login</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-title content-ar">نسب الهاشميين</h3>
+                    <h3 class="footer-title content-en">The Hashemites Lineages</h3>
+                    <p class="content-ar">الموقع الرسمي للهاشميين في السودان، مخصص للتعارف، والتوثيق، وصلة الأرحام.</p>
+                    <p class="content-en">The official website of the Hashemites in Sudan, dedicated to acquaintance, documentation, and kinship.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title content-ar">روابط مهمة</h3>
+                    <h3 class="footer-title content-en">Important Links</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="../index.html" class="footer-link">
+                                <span class="content-ar">الصفحة الرئيسية</span>
+                                <span class="content-en">Home</span>
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="../pages/union/index.html" class="footer-link">
+                                <span class="content-ar">النقابة</span>
+                                <span class="content-en">Union</span>
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="../pages/verification/index.html" class="footer-link">
+                                <span class="content-ar">التحقق</span>
+                                <span class="content-en">Verification</span>
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="../pages/history/index.html" class="footer-link">
+                                <span class="content-ar">التاريخ والأنساب</span>
+                                <span class="content-en">History & Genealogy</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title content-ar">معلومات الاتصال</h3>
+                    <h3 class="footer-title content-en">Contact Information</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Khartoum,Sudan" target="_blank" class="contact-link"><span class="content-ar">الخرطوم، السودان</span><span class="content-en">Khartoum, Sudan</span></a></p>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:Banuhashim.sd@gmail.com" class="contact-link">Banuhashim.sd@gmail.com</a></p>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+249903440956" class="contact-link"><span class="content-ar">‎+249903440956</span><span class="content-en">+249903440956</span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="content-ar">جميع الحقوق محفوظة &copy; <span class="year">2025</span> - نقابة الأشراف الطالبين في السودان</p>
+            <p class="content-en">All rights reserved &copy; <span class="year">2025</span> - Hashemite Ṭālibī Union in Sudan</p>
+        </div>
+    </footer>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        // Update copyright year
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElements = document.querySelectorAll('.year');
+            const currentYear = new Date().getFullYear();
+            yearElements.forEach(element => {
+                element.textContent = currentYear;
+            });
+        });
+    </script>
+</body>
+</html>

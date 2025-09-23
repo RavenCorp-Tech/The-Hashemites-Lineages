@@ -1,0 +1,33 @@
+/* Fix for form field text color in dark mode */
+
+/* Default text color for inputs */
+.form-control {
+    color: var(--text-dark);
+}
+
+/* When in dark mode, make text in form controls white */
+[data-theme="dark"] .form-control {
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Fix for input group buttons in dark mode */
+[data-theme="dark"] .btn-outline-secondary {
+    color: var(--text-light);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}

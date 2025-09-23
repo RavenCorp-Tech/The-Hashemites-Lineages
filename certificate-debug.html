@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate System Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #log {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-top: 20px;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Certificate System Debugger</h1>
+    
+    <div id="controls">
+        <button onclick="testLocalStorage()">Test localStorage</button>
+        <button onclick="addTestCertificate()">Add Test Certificate</button>
+        <button onclick="verifyTestCertificate()">Verify Certificate</button>
+        <button onclick="clearCertificates()">Clear All Certificates</button>
+    </div>
+    
+    <div class="section">
+        <h2>Test Certificate Data</h2>
+        <pre id="test-cert-data"></pre>
+    </div>
+    
+    <div id="log"></div>
+    
+    <script>
+        // Display the test certificate data
+        const testCertificate = {
+            serialNumber: "NS-2025-0016",
+            nameEn: "Adil Hasan",
+            nameAr: "عادل حسن",
+            certificateTypeEn: "Certificate of Appreciation",
+            certificateTypeAr: "شهادة شكر وتقدير",
+            dateEn: "24/09/2025",
+            dateAr: "24/09/2025",
+            statusEn: "Valid and Certified",
+            statusAr: "صالحة ومُعتمدة",
+            qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0016"
+        };
+        
+        document.getElementById('test-cert-data').textContent = JSON.stringify(testCertificate, null, 2);
+        
+        // Logger function
+        function log(message, isError = false) {
+            const logElement = document.getElementById('log');
+            const logEntry = document.createElement('div');
+            logEntry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            if (isError) {
+                logEntry.classList.add('error');
+            }
+            logElement.appendChild(logEntry);
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        // Test localStorage functionality
+        function testLocalStorage() {
+            log("Testing localStorage...");
+            try {
+                const testKey = '__test_cert__';
+                localStorage.setItem(testKey, JSON.stringify({test: 'value'}));
+                const retrieved = localStorage.getItem(testKey);
+                localStorage.removeItem(testKey);
+                if (retrieved) {
+                    log("localStorage test PASSED ✅");
+                } else {
+                    log("localStorage test FAILED - Could not retrieve data", true);
+                }
+            } catch (error) {
+                log(`localStorage test FAILED with error: ${error.message}`, true);
+            }
+        }
+        
+        // Add test certificate to localStorage
+        function addTestCertificate() {
+            log("Adding test certificate...");
+            try {
+                // Get existing certificates or start with empty array
+                const existingJSON = localStorage.getItem('certificatesData');
+                let certificates = [];
+                
+                if (existingJSON) {
+                    certificates = JSON.parse(existingJSON);
+                    log(`Found existing certificates: ${certificates.length}`);
+                }
+                
+                // Check if the certificate already exists
+                const existingCert = certificates.find(cert => cert.serialNumber === testCertificate.serialNumber);
+                if (existingCert) {
+                    log(`Certificate with serial number ${testCertificate.serialNumber} already exists`, true);
+                    return;
+                }
+                
+                // Add new certificate
+                certificates.push(testCertificate);
+                log(`New certificate array length: ${certificates.length}`);
+                
+                // Save back to localStorage
+                localStorage.setItem('certificatesData', JSON.stringify(certificates));
+                log("Certificate saved to localStorage ✅");
+            } catch (error) {
+                log(`Save to localStorage FAILED with error: ${error.message}`, true);
+            }
+        }
+        
+        // Verify test certificate in localStorage
+        function verifyTestCertificate() {
+            log("Verifying certificate in localStorage...");
+            try {
+                const savedJSON = localStorage.getItem('certificatesData');
+                if (!savedJSON) {
+                    log("No data found in localStorage!", true);
+                    return;
+                }
+                
+                const savedCertificates = JSON.parse(savedJSON);
+                log(`Retrieved certificates count: ${savedCertificates.length}`);
+                
+                // Try to find our test certificate
+                const foundCert = savedCertificates.find(cert => cert.serialNumber === testCertificate.serialNumber);
+                
+                if (foundCert) {
+                    log(`Certificate with serial number ${testCertificate.serialNumber} found ✅`);
+                    
+                    // Check if data matches
+                    const nameMatches = foundCert.nameEn === testCertificate.nameEn && 
+                                        foundCert.nameAr === testCertificate.nameAr;
+                                        
+                    if (nameMatches) {
+                        log("Certificate data matches correctly ✅");
+                    } else {
+                        log("Certificate found but data doesn't match!", true);
+                    }
+                } else {
+                    log(`Certificate with serial number ${testCertificate.serialNumber} not found`, true);
+                }
+            } catch (error) {
+                log(`Verification FAILED with error: ${error.message}`, true);
+            }
+        }
+        
+        // Clear all certificates
+        function clearCertificates() {
+            try {
+                localStorage.removeItem('certificatesData');
+                log("All certificates have been cleared from localStorage");
+            } catch (error) {
+                log(`Clear certificates FAILED with error: ${error.message}`, true);
+            }
+        }
+        
+        // Run initial localStorage test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            log("Certificate System Debug Tool loaded");
+            testLocalStorage();
+        });
+    </script>
+</body>
+</html>

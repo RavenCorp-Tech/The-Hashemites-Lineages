@@ -1,0 +1,425 @@
+/* Admin Portal Styles */
+
+/* Login Page */
+.admin-section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.admin-login-container {
+    max-width: 600px;
+    margin: 2rem auto 4rem;
+}
+
+.admin-login-card {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.admin-login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Password toggle button */
+.password-toggle {
+    border-color: var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.password-toggle:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+    color: var(--accent-color);
+}
+
+/* Admin Dashboard Styles */
+.admin-container {
+    min-height: calc(100vh - 600px);
+    margin-bottom: 3rem;
+}
+
+.admin-dashboard-header {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-dashboard-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Admin Tabs */
+.admin-tabs {
+    margin-bottom: 2rem;
+}
+
+.tab-navigation {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn i {
+    font-size: 1.2rem;
+}
+
+.tab-btn:hover {
+    color: var(--accent-color);
+}
+
+.tab-btn.active {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* Admin Section Headers */
+.admin-section-header {
+    margin-bottom: 2rem;
+}
+
+.admin-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-heading {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-heading i {
+    color: var(--accent-color);
+}
+
+/* Admin Cards */
+.admin-welcome-message {
+    margin-bottom: 2rem;
+}
+
+.admin-cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    flex: 1 0 300px;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.admin-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-card-icon i {
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+.admin-card-content {
+    flex: 1;
+}
+
+.admin-card-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.admin-card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--accent-color);
+}
+
+/* Admin Action Buttons */
+.admin-action-btn {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-action-btn:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+}
+
+.admin-btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.admin-btn-primary:hover {
+    background-color: var(--accent-dark);
+    color: white;
+}
+
+/* Overall wrapper to prevent horizontal scrolling */
+.admin-content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Admin Data Tables */
+.admin-data-table-container {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-data-table th, 
+.admin-data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-data-table th {
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.admin-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-data-table tr:hover td {
+    background-color: rgba(var(--accent-color-rgb), 0.05);
+}
+
+/* Certificate Management */
+.certificate-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    transition: color var(--transition-speed);
+}
+
+.form-group .form-control {
+    background-color: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.form-group .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.15);
+    outline: none;
+}
+
+.form-group .text-muted {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Modal styling */
+.modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: var(--card-bg);
+    overflow: hidden;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.modal-header {
+    border-bottom: none;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: 1.2rem 1.5rem;
+    position: relative;
+}
+
+.modal-header .modal-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-header .btn-close {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-header .btn-close:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+}
+
+/* Action Buttons */
+.btn-circle {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.2rem;
+}
+
+.btn-circle i {
+    font-size: 14px;
+}
+
+/* Toast notification */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1060;
+}
+
+/* Responsive styling */
+@media (max-width: 991px) {
+    .admin-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-cards-row {
+        flex-direction: column;
+    }
+    
+    .admin-stat-card {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-navigation {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .admin-data-table {
+        width: 100%;
+    }
+}

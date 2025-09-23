@@ -1,5 +1,13 @@
-// Certificates data for verification system
-const certificatesData = [
+/**
+ * Certificates Database for Verification System
+ * The Hashemites Lineages Website
+ * 
+ * This file contains the master data for all certificates.
+ * It's also used by the admin interface to manage certificates.
+ */
+
+// Certificate data with both Arabic and English translations
+let certificatesData = [
     {
         serialNumber: "NS-2025-0001",
         nameAr: "د. يس الكليدر الحسيني الهاشمي",
@@ -9,7 +17,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0001"
     },
     {
         serialNumber: "NS-2025-0002",
@@ -20,7 +29,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0002"
     },
     {
         serialNumber: "NS-2025-0003",
@@ -31,7 +41,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0003"
     },
     {
         serialNumber: "NS-2025-0004",
@@ -42,7 +53,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0004"
     },
     {
         serialNumber: "NS-2025-0005",
@@ -53,7 +65,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0005"
     },
     {
         serialNumber: "NS-2025-0006",
@@ -64,7 +77,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0006"
     },
     {
         serialNumber: "NS-2025-0007",
@@ -75,7 +89,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0007"
     },
     {
         serialNumber: "NS-2025-0008",
@@ -86,7 +101,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0008"
     },
     {
         serialNumber: "NS-2025-0009",
@@ -97,7 +113,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0009"
     },
     {
         serialNumber: "NS-2025-0010",
@@ -108,7 +125,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0010"
     },
     {
         serialNumber: "NS-2025-0011",
@@ -119,7 +137,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0011"
     },
     {
         serialNumber: "NS-2025-0012",
@@ -130,7 +149,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0012"
     },
     {
         serialNumber: "NS-2025-0013",
@@ -141,7 +161,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0013"
     },
     {
         serialNumber: "NS-2025-0014",
@@ -152,7 +173,8 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0014"
     },
     {
         serialNumber: "NS-2025-0015",
@@ -163,6 +185,13 @@ const certificatesData = [
         dateAr: "23/09/2025",
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
-        statusEn: "Valid and Certified"
+        statusEn: "Valid and Certified",
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0015"
     }
 ];
+
+// Initialize localStorage with the certificate data when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Always use the default data to ensure consistency
+    localStorage.setItem('certificatesData', JSON.stringify(certificatesData));
+});

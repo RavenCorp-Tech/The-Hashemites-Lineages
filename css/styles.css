@@ -588,6 +588,45 @@ ul, ol {
     display: block;
 }
 
+.qr-code-container {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.qr-code-img {
+    width: 200px;
+    height: 200px;
+    margin: 15px auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.qr-code-img:hover {
+    transform: scale(1.05);
+}
+
+/* Admin link in footer */
+.admin-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
 .certificate-details {
     background-color: rgba(var(--bg-light-rgb), 0.5);
     margin-top: 20px;
