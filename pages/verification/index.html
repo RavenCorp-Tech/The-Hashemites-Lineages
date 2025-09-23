@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label for="serial-number" class="form-label content-ar">الرقم التسلسلي</label>
                     <label for="serial-number" class="form-label content-en">Serial Number</label>
-                    <input type="text" id="serial-number" name="serial-number" class="form-input" placeholder="e.g., NSC-2025-001" required>
+                    <input type="text" id="serial-number" name="serial-number" class="form-input" placeholder="e.g., NS-2025-0001" required>
                 </div>
                 
                 <div class="text-center">
@@ -191,7 +191,7 @@
                 <h3 class="content-en">Sample QR Verification Code</h3>
                 
                 <div class="mt-3">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NSC-2025-001" alt="Sample QR Code" style="max-width: 200px;" class="reveal-pulse">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0001" alt="Sample QR Code" style="max-width: 200px;" class="reveal-pulse">
                 </div>
                 
                 <p class="mt-2 content-ar">امسح رمز QR للتحقق من صحة الشهادة</p>
@@ -266,7 +266,9 @@
     </footer>
     
     <!-- JavaScript -->
+    <script src="../../js/certificates.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/verification.js"></script>
     <script>
         // Set copyright year
         document.querySelectorAll('#year').forEach(el => {
@@ -277,38 +279,6 @@
         if (!document.getElementById('logo-img').src.includes('Logo.png')) {
             document.getElementById('logo-img').src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230a5e2a'/%3E%3Cpath d='M30,35 L70,35 L50,70 Z' fill='%238c6e3c'/%3E%3C/svg%3E";
         }
-        
-        // Demo verification functionality
-        const form = document.querySelector('.verification-form');
-        const resultDiv = document.querySelector('.verification-result');
-        
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const serialNumber = document.getElementById('serial-number').value;
-            const name = document.getElementById('name').value;
-            
-            resultDiv.style.display = 'block';
-            
-            // For demo purposes, we'll just check if the serial number is our sample
-            if (serialNumber === 'NSC-2025-001') {
-                resultDiv.innerHTML = `
-                    <div class="verification-success">
-                        <i class="fas fa-check-circle"></i>
-                        <div class="content-ar">تم التحقق بنجاح. الوثيقة أصلية.</div>
-                        <div class="content-en">Verification successful. The document is authentic.</div>
-                    </div>
-                `;
-            } else {
-                resultDiv.innerHTML = `
-                    <div class="verification-failure">
-                        <i class="fas fa-times-circle"></i>
-                        <div class="content-ar">فشل التحقق. لم يتم العثور على الوثيقة.</div>
-                        <div class="content-en">Verification failed. Document not found.</div>
-                    </div>
-                `;
-            }
-        });
         
         // Initialize theme and scroll reveal on page load
         document.addEventListener('DOMContentLoaded', () => {
