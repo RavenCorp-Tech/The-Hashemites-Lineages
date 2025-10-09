@@ -1,6 +1,6 @@
 /**
  * Certificate Verification System
- * The Hashemites Lineages Website
+ * The Nobles of Sudan Website
  */
 
 // Wait for DOM to be fully loaded

@@ -1,4 +1,4 @@
-# The Hashemites Lineages - نسب الهاشميين
+# The Nobles of Sudan - أشراف السودان
 
 A bilingual (Arabic/English) website dedicated to the Hashemites in Sudan, their lineages, history, and cultural heritage.
 
@@ -40,7 +40,7 @@ The website consists of the following main sections:
 
 ## Contact Information
 
-- **Email**: Banuhashim.sd@gmail.com
+- **Email**: Hashemis.sd@gmail.com
 - **Phone**:
   - +249903440956
   - +249118790042
@@ -49,7 +49,7 @@ The website consists of the following main sections:
 
 <div dir="rtl">
 
-# نسب الهاشميين - The Hashemites Lineages
+# أشراف السودان - The Nobles of Sudan
 
 موقع إلكتروني ثنائي اللغة (عربي/إنجليزي) مخصص للهاشميين في السودان، وأنسابهم، وتاريخهم، وتراثهم الثقافي.
 
@@ -91,7 +91,7 @@ The website consists of the following main sections:
 
 ## معلومات الاتصال
 
-- **البريد الإلكتروني**: Banuhashim.sd@gmail.com
+- **البريد الإلكتروني**: Hashemis.sd@gmail.com
 - **الهاتف/واتساب**:
   - +249903440956
   - +249118790042

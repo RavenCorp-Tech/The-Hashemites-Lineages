@@ -1,6 +1,6 @@
 /**
  * Admin Dashboard JavaScript
- * The Hashemites Lineages Website
+ * The Nobles of Sudan Website
  */
 
 // Global variables

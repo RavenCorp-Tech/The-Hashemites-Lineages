@@ -1,5 +1,5 @@
 /**
- * The Hashemites Lineages - Main JavaScript File
+ * The Nobles of Sudan - Main JavaScript File
  * Handles language toggling, navigation, theme switching, and interactive elements
  * Created: September 22, 2025
  * Updated: September 22, 2025 - Added theme toggle and scroll reveal

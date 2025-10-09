@@ -1,6 +1,6 @@
 /**
  * Certificates Database for Verification System
- * The Hashemites Lineages Website
+ * The Nobles of Sudan Website
  * 
  * This file contains the master data for all certificates.
  * It's also used by the admin interface to manage certificates.
