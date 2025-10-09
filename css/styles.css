@@ -95,6 +95,10 @@ body {
     line-height: 1.6;
     transition: background-color var(--transition-speed), color var(--transition-speed);
     padding-top: 80px; /* Add padding to accommodate fixed header */
+    /* Protect against horizontal overflow and respect safe-area insets */
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 /* Selection & focus accessibility */
@@ -162,7 +166,9 @@ ul, ol {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    /* Responsive inline padding + safe areas to avoid touching screen edges */
+    padding-left: max(16px, calc(4vw + env(safe-area-inset-left)));
+    padding-right: max(16px, calc(4vw + env(safe-area-inset-right)));
 }
 
 .row {
@@ -860,7 +866,11 @@ ul, ol {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: var(--header-shadow);
-        padding: var(--spacing-md) 0;
+        /* Vertical padding + horizontal safe-area protected padding */
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        padding-left: max(16px, calc(4vw + env(safe-area-inset-left)));
+        padding-right: max(16px, calc(4vw + env(safe-area-inset-right)));
         border-bottom-left-radius: var(--border-radius-md);
         border-bottom-right-radius: var(--border-radius-md);
         z-index: 1000;
@@ -996,8 +1006,11 @@ ul, ol {
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
-        margin: 0 -15px;
-        padding: 0 15px;
+        /* Remove negative margins so content never touches the edges */
+        margin: 0;
+        /* Add comfortable side padding with safe-area support */
+        padding-left: max(12px, calc(4vw + env(safe-area-inset-left)));
+        padding-right: max(12px, calc(4vw + env(safe-area-inset-right)));
     }
     
     .tab-item, .history-tab-item {
@@ -1028,6 +1041,44 @@ ul, ol {
     /* Improve scrolling experience */
     .section {
         overflow-x: hidden;
+    }
+}
+
+/* Edge protection for pages that don’t use .container (e.g., simple pages) */
+header, main, footer {
+    /* Ensure content never touches the screen sides even without .container */
+    padding-left: max(16px, calc(4vw + env(safe-area-inset-left)));
+    padding-right: max(16px, calc(4vw + env(safe-area-inset-right)));
+}
+
+/* Responsive media so images/videos never overflow */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Wrap long content gracefully */
+p, li, .poetry-verse, .verse-line, .union-statement, .certificate-details {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Prevent horizontal scroll globally just in case */
+html, body { overflow-x: hidden; }
+
+/* Tables (if any) become scrollable on small screens without touching edges */
+.responsive-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.responsive-table table { width: 100%; border-collapse: collapse; }
+
+/* Reduce hover translate motions on touch devices to keep layout stable */
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover, .objective-card:hover, .history-image:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
     }
 }
 
