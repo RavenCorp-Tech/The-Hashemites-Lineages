@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" class="modern" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Preview — The Nobles of Sudan</title>
+  <meta name="description" content="Modern visual preview using existing site data and markup." />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Existing base styles + modern overrides -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body class="rtl">
+  <!-- Reuse existing header structure so data/content remains the same -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/Logo.png" alt="Logo" id="logo-img" />
+        <div class="logo-text">
+          <h1 class="content-ar">أشراف السودان</h1>
+          <h1 class="content-en">The Nobles of Sudan</h1>
+          <p class="content-ar">الموقع الرسمي للأشراف في السودان</p>
+          <p class="content-en">Official Website of Nobles in Sudan</p>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle">&#9776;</button>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية · Home</a></li>
+          <li class="nav-item"><a href="pages/union/index.html" class="nav-link">النقابة · Union</a></li>
+          <li class="nav-item"><a href="pages/verification/index.html" class="nav-link">التحقق · Verification</a></li>
+          <li class="nav-item"><a href="pages/history/index.html" class="nav-link">التاريخ والأنساب · History</a></li>
+        </ul>
+        <div class="toggles-container">
+          <div class="theme-toggle">
+            <button class="theme-toggle-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+          </div>
+          <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="ar">العربية</button>
+            <button class="lang-btn" data-lang="en">English</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 class="content-ar">مرحباً بكم في الموقع الرسمي للأشراف في السودان</h1>
+      <h1 class="content-en">Welcome to the official website of the Nobles in Sudan</h1>
+      <p class="content-ar">ملتقى آل بيت النبي ﷺ على المحبة والتعارف وصلة الأرحام</p>
+      <p class="content-en">A gathering place for the family of the Prophet for love, acquaintance, and kinship</p>
+      <div class="mt-3">
+        <a class="btn" href="pages/verification/index.html">ابدأ التحقق · Start Verification</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="objectives-container">
+        <div class="objective-card reveal">
+          <div class="objective-icon"><i class="fas fa-sitemap"></i></div>
+          <h3 class="objective-title">التوثيق · Documentation</h3>
+          <p class="muted">توثيق الأنساب وحفظ الموروث.</p>
+        </div>
+        <div class="objective-card reveal">
+          <div class="objective-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="objective-title">التحقق · Verification</h3>
+          <p class="muted">نظام تحقق حديث وآمن.</p>
+        </div>
+        <div class="objective-card reveal">
+          <div class="objective-icon"><i class="fas fa-users"></i></div>
+          <h3 class="objective-title">التواصل · Community</h3>
+          <p class="muted">صلة الأرحام والتعارف.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="poetry">
+    <div class="container">
+      <div class="poetry-container reveal">
+        <div class="poetry-decoration"></div>
+        <div class="poetry-content">
+          <p class="poetry-verse">
+            <span class="verse-line">إذا افتخرْتَ على البريَّة فانظروا ✦✦✦ أصلَ الهدى من طيبِ جدٍّ طاهرِ</span>
+            <span class="verse-line">نحنُ الأشراف الكرامُ إذا انتَسَبْ ✦✦✦ نسبٌ عريقٌ في المعالي فاخرِ</span>
+          </p>
+        </div>
+        <div class="poetry-decoration"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h4 class="footer-title">أشراف السودان · The Nobles of Sudan</h4>
+        <p class="muted">حفظ التاريخ وصون النسب.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

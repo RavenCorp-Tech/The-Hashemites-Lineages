@@ -1,0 +1,157 @@
+/* Modern Theme Overrides (Preview)
+   Scope: applied when <html class="modern"> is present
+   Non-destructive: no text/data changes; overrides visuals only
+*/
+
+/* Root variables: light */
+html.modern {
+  --primary-color: #0e7a37; /* richer green */
+  --secondary-color: #b0892f; /* warm gold */
+  --accent-color: #f0b429; /* vivid amber */
+  --bg-light: #f6f7f9; /* cleaner light */
+  --text-dark: #1f2937; /* slate-800 */
+  --card-bg: #ffffff;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-sm: 0 2px 6px rgba(2, 6, 23, 0.06);
+  --shadow-md: 0 10px 25px rgba(2, 6, 23, 0.10);
+  --shadow-lg: 0 22px 48px rgba(2, 6, 23, 0.16);
+
+  --ring: 0 0 0 3px rgba(240, 180, 41, 0.35);
+}
+
+/* Root variables: dark */
+html.modern[data-theme="dark"] {
+  --primary-color: #21c264;
+  --secondary-color: #e8cc8a;
+  --accent-color: #ffd061;
+  --bg-light: #0f1115;
+  --text-dark: #e5e7eb; /* slate-200 */
+  --card-bg: #151822;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 22px 52px rgba(0, 0, 0, 0.55);
+
+  --ring: 0 0 0 3px rgba(255, 208, 97, 0.28);
+}
+
+/* Base look */
+html.modern body {
+  background:
+    radial-gradient(1200px 400px at 10% -10%, rgba(14,122,55,0.10), transparent 40%),
+    radial-gradient(800px 300px at 110% 0%, rgba(240,180,41,0.10), transparent 45%),
+    var(--bg-light);
+}
+
+/* Header: glass + pill nav */
+html.modern .header {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+}
+html.modern[data-theme="dark"] .header {
+  background: rgba(15,17,21,0.55);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.45);
+}
+
+html.modern .nav-link {
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: all .25s ease;
+}
+html.modern .nav-link:hover {
+  background: rgba(14,122,55,0.10);
+  text-decoration: none;
+}
+html.modern[data-theme="dark"] .nav-link:hover {
+  background: rgba(33,194,100,0.12);
+}
+
+/* Hero: gradient overlay + bigger type */
+html.modern .hero {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 130px;
+  background-image:
+    linear-gradient(rgba(3,7,18,0.45), rgba(3,7,18,0.45)),
+    url('../images/hero-bg.jpg');
+}
+html.modern .hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(500px 200px at 15% 20%, rgba(33,194,100,0.22), transparent 50%),
+    radial-gradient(600px 240px at 85% 15%, rgba(240,180,41,0.22), transparent 55%);
+  pointer-events: none;
+}
+html.modern .hero h1 { font-weight: 800; letter-spacing: 0.3px; }
+html.modern .hero p { opacity: .95; }
+
+/* Buttons */
+html.modern .btn {
+  border-radius: 999px;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+html.modern .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+html.modern .btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+
+/* Cards and containers */
+html.modern .poetry-container,
+html.modern .verification-form,
+html.modern .union-statement {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(2,6,23,0.05);
+}
+html.modern[data-theme="dark"] .poetry-container,
+html.modern[data-theme="dark"] .verification-form,
+html.modern[data-theme="dark"] .union-statement {
+  border-color: rgba(255,255,255,0.06);
+}
+
+html.modern .objective-card {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transform: translateZ(0);
+}
+html.modern .objective-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+
+/* Inputs */
+html.modern .form-input {
+  border-radius: 12px;
+  border: 1px solid rgba(2,6,23,0.1);
+  background: var(--card-bg);
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+html.modern .form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: var(--ring);
+}
+
+/* Verification states */
+html.modern .verification-success { border-radius: 14px; }
+html.modern .verification-failure { border-radius: 14px; }
+
+/* Footer */
+html.modern .footer {
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.12)), var(--footer-bg);
+}
+
+/* Utilities */
+html.modern .reveal { transition-duration: .9s; }
+html.modern .reveal-left, html.modern .reveal-right { transition-duration: .9s; }
+
+/* Stronger section spacing for airiness */
+html.modern .section { padding: 3rem 0; }
+
+/* Logo tweak */
+html.modern .logo img { filter: drop-shadow(0 3px 6px rgba(2,6,23,0.2)); }
