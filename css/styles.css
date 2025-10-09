@@ -161,6 +161,12 @@ ul, ol {
     margin-bottom: var(--spacing-md);
 }
 
+/* Proper list indentation for RTL so bullets/text don’t hit the right edge */
+.rtl ul, .rtl ol {
+    margin-right: var(--spacing-lg);
+    margin-left: 0;
+}
+
 /* ===== LAYOUT ===== */
 .container {
     width: 100%;
@@ -847,6 +853,9 @@ ul, ol {
     padding-top: var(--spacing-lg);
     margin-top: var(--spacing-lg);
     border-top: 1px solid rgba(255,255,255,0.1);
+    /* Ensure footer bottom text doesn't touch screen edges */
+    padding-left: max(16px, calc(4vw + env(safe-area-inset-left)));
+    padding-right: max(16px, calc(4vw + env(safe-area-inset-right)));
 }
 
 /* ===== RESPONSIVE STYLES ===== */
@@ -958,9 +967,13 @@ ul, ol {
     
     .row {
         flex-direction: column;
+        /* Remove negative side margins on mobile to keep content inside gutters */
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .col {
+        /* Vertical spacing only; horizontal spacing handled by .container gutters */
         padding: var(--spacing-md) 0;
     }
 }
