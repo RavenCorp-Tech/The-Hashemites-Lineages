@@ -92,6 +92,108 @@ html.modern .hero::after {
 html.modern .hero h1 { font-weight: 800; letter-spacing: 0.3px; }
 html.modern .hero p { opacity: .95; }
 
+/* Leadership section */
+html.modern .leadership {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+html.modern .leadership::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 300px at 15% 50%, rgba(14,122,55,0.08), transparent 50%),
+    radial-gradient(600px 240px at 85% 60%, rgba(240,180,41,0.08), transparent 55%);
+  pointer-events: none;
+}
+
+html.modern .leadership-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+html.modern .leadership-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+html.modern .leadership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+html.modern .leadership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+html.modern .leadership-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14,122,55,0.10);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+html.modern[data-theme="dark"] .leadership-icon {
+  background: rgba(33,194,100,0.12);
+}
+
+html.modern .leadership-icon i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+html.modern .leadership-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+html.modern .leadership-card p,
+html.modern .leadership-card ul {
+  color: var(--text-dark);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+html.modern .leadership-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+html.modern .leadership-card ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+html.modern .leadership-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
 /* Buttons */
 html.modern .btn {
   border-radius: 999px;
