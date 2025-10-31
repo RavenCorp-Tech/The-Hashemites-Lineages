@@ -1,0 +1,10 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect all profile requests to profile/index.html
+RewriteRule ^profile/([^/]+)/?$ profile/index.html [L]
+
+# Prevent direct access to profile/index.html without a token
+RewriteCond %{REQUEST_URI} ^/profile/index\.html$ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://[^/]+/profile/ [NC]
+RewriteRule .* - [F,L]

@@ -80,6 +80,9 @@ function findCertificate(serialNumber) {
  * @param {HTMLElement} resultDiv - The results container
  */
 function displaySuccess(certificate, resultDiv) {
+    // Generate the enhanced QR code with certificate details and profile link
+    const qrCodeUrl = generateQRCode(certificate);
+    
     resultDiv.innerHTML = `
         <div class="verification-success">
             <i class="fas fa-check-circle"></i>
@@ -106,9 +109,13 @@ function displaySuccess(certificate, resultDiv) {
                 </div>
                 
                 <div class="qr-code-container mt-4">
-                    <div class="content-ar">امسح رمز QR للتحقق من الشهادة</div>
-                    <div class="content-en">Scan the QR code to verify the certificate</div>
-                    <img src="${certificate.qrCode}" alt="QR Code" class="qr-code-img mt-2">
+                    <div class="content-ar">امسح رمز QR للتحقق من تفاصيل الشهادة</div>
+                    <div class="content-en">Scan the QR code to verify certificate details</div>
+                    <img src="${qrCodeUrl}" alt="QR Code" class="qr-code-img mt-2">
+                    <div class="qr-info mt-2">
+                        <div class="content-ar small">يحتوي رمز QR على معلومات الشهادة باللغتين العربية والإنجليزية</div>
+                        <div class="content-en small">QR code contains certificate information in both Arabic and English</div>
+                    </div>
                 </div>
             </div>
         </div>

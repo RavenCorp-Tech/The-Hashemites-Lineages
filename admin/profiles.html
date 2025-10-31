@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles Management | Admin Dashboard</title>
+    <meta name="description" content="Profiles Management - The Nobles of Sudan Admin Dashboard">
+    <!-- Include all the same styles as dashboard.html -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="profiles.css">
+</head>
+<body class="ltr">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="dashboard.html" class="logo">
+                <img src="../images/Logo.png" alt="Hashemites Lineages Logo" id="logo-img">
+                <div class="logo-text">
+                    <h1 class="content-ar">إدارة الملفات الشخصية</h1>
+                    <h1 class="content-en">Profiles Management</h1>
+                </div>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <span class="content-ar">لوحة التحكم</span>
+                            <span class="content-en">Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="toggles-container">
+                    <div class="theme-toggle">
+                        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="lang-toggle">
+                        <button class="lang-btn" data-lang="ar">العربية</button>
+                        <button class="lang-btn active" data-lang="en">English</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="profiles-grid">
+                <!-- Profiles will be loaded here dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Profile Preview Modal -->
+    <div class="modal fade" id="profilePreviewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span class="content-ar">معاينة الملف الشخصي</span>
+                        <span class="content-en">Profile Preview</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="profilePreviewContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/certificates.js"></script>
+    <script src="profiles.js"></script>
+</body>
+</html>

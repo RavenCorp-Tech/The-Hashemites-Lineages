@@ -314,12 +314,34 @@ function setupScrollReveal() {
 }
 
 /**
- * Generate QR code for verification
- * Note: This would require a QR code library in production
+ * Generate QR code for verification with clean certificate details
+ * @param {Object} certificate - The certificate data object
+ * @returns {string} The QR code URL
  */
-function generateQRCode(data) {
-    // This is a placeholder for actual QR code generation
-    console.log('Generating QR code for:', data);
-    // In a real application, this would use a library like qrcode.js
-    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(JSON.stringify(data))}`;
+function generateQRCode(certificate) {
+    // Create a clean, readable certificate details string
+    const certificateText = 
+`Certificate Details - معلومات الشهادة
+─────────────────────────
+Serial Number - الرقم التسلسلي:
+${certificate.serialNumber}
+
+Name - الاسم:
+${certificate.nameAr}
+${certificate.nameEn}
+
+Certificate Type - نوع الشهادة:
+${certificate.certificateTypeAr}
+${certificate.certificateTypeEn}
+
+Date - التاريخ:
+${certificate.dateAr}
+${certificate.dateEn}
+
+Status - الحالة:
+${certificate.statusAr}
+${certificate.statusEn}`;
+    
+    // Generate QR code with clean text format
+    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(certificateText)}`;
 }

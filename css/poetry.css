@@ -1,0 +1,141 @@
+/* Poetry Section Styles */
+.poetry-section {
+    position: relative;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    overflow: hidden;
+}
+
+.poetry-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+/* Neon effect for poetry container */
+.poetry-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #4CAF50, #2196F3, #9C27B0);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+    animation: neonGlow 3s ease-in-out infinite;
+}
+
+/* Poetry text styles */
+.poetry-text {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    color: #fff;
+}
+
+.poetry-text.ar {
+    font-family: 'Aref Ruqaa', 'Noto Nastaliq Urdu', serif;
+    font-size: 1.5rem;
+    line-height: 2.2;
+    direction: rtl;
+}
+
+.poetry-text.en {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-top: 1.5rem;
+}
+
+/* Poetry line styles */
+.poetry-line {
+    margin: 0.8rem 0;
+    transition: transform 0.3s ease;
+}
+
+.poetry-line:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Decorative elements */
+.poetry-decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.poetry-decoration.top-right {
+    top: -20px;
+    right: -20px;
+    background: radial-gradient(circle, #4CAF50 0%, transparent 70%);
+}
+
+.poetry-decoration.bottom-left {
+    bottom: -20px;
+    left: -20px;
+    background: radial-gradient(circle, #9C27B0 0%, transparent 70%);
+}
+
+/* Animation keyframes */
+@keyframes neonGlow {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .poetry-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .poetry-text.ar {
+        font-size: 1.3rem;
+        line-height: 2;
+    }
+    
+    .poetry-text.en {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Poetry section light theme overrides */
+[data-theme="light"] .poetry-section {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+[data-theme="light"] .poetry-container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .poetry-text {
+    color: #333;
+}
+
+[data-theme="light"] .poetry-line:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

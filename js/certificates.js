@@ -18,7 +18,27 @@ let certificatesData = [
         dateEn: "23/09/2025",
         statusAr: "صالحة ومُعتمدة",
         statusEn: "Valid and Certified",
-        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NS-2025-0001"
+        qrCode: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(
+`Certificate Details - معلومات الشهادة
+─────────────────────────
+Serial Number - الرقم التسلسلي:
+NS-2025-0001
+
+Name - الاسم:
+د. يس الكليدر الحسيني الهاشمي
+Dr. Yasin Al-Kalidar Al-Husayni Al-Hashimi
+
+Certificate Type - نوع الشهادة:
+شهادة شكر وتقدير
+Certificate of Appreciation
+
+Date - التاريخ:
+23/09/2025
+23/09/2025
+
+Status - الحالة:
+صالحة ومُعتمدة
+Valid and Certified`)
     },
     {
         serialNumber: "NS-2025-0002",
